@@ -72,7 +72,8 @@
     audio.play();
   }
 
-  const keys = document.querySelectorAll('.key');
+  const keys = document.querySelectorAll('.key'); // NodeList
+  // const keys = Array.from(document.querySelectorAll('.key')); // Array
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
   window.addEventListener('keydown', playSound);
 </script>
