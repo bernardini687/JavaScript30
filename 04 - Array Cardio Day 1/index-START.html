@@ -26,6 +26,12 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    function inTheCentury(year, centuryStart) {
+      const centuryEnd = centuryStart + 100;
+      (year < centuryEnd && year >= centuryStart) ? true : false;
+    }
+    const result = inventors.filter(inventor => inTheCentury(inventor.year, 1500));
+    console.log(result);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
