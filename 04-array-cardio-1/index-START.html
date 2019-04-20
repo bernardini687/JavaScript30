@@ -105,8 +105,10 @@
     // 7. Sort the people alphabetically by last name
     result = people.sort((x, y) => {
       const xLastAndFirst = x.split(', ');
+
       // const [xLast, xFirst] = x.split(', ');
       // also works but it requires line 110 instead of 109
+
       const yLastAndFirst = y.split(', ');
       return xLastAndFirst[0] > yLastAndFirst[0] ? 1 : -1;
       // return xLast > yLast ? 1 : -1;
@@ -130,6 +132,27 @@
       'car',
       'truck'
     ];
+
+    // const words = [];
+    // result = {};
+    // data.forEach(item => {
+    //   if (!words.includes(item)) {
+    //     words.push(item);
+    //     result[item] = 1;
+    //   } else {
+    //     result[item]++;
+    //   }
+    // });
+
+    result = data.reduce((obj, item) => {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
+
+    console.log(result);
   </script>
 </body>
 </html>
