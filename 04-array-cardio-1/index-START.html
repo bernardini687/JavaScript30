@@ -23,47 +23,47 @@
     ];
 
     const people = [
-      'Beck, Glenn',
+      'Biondo, Frank',
       'Becker, Carl',
-      'Beckett, Samuel',
-      'Beddoes, Mick',
-      'Beecher, Henry',
-      'Beethoven, Ludwig',
-      'Begin, Menachem',
-      'Belloc, Hilaire',
-      'Bellow, Saul',
+      'Beck, Glenn',
       'Benchley, Robert',
       'Benenson, Peter',
-      'Ben-Gurion, David',
-      'Benjamin, Walter',
-      'Benn, Tony',
-      'Bennington, Chester',
-      'Benson, Leana',
-      'Bent, Silas',
-      'Bentsen, Lloyd',
-      'Berger, Ric',
-      'Bergman, Ingmar',
-      'Berio, Luciano',
       'Berle, Milton',
-      'Berlin, Irving',
-      'Berne, Eric',
-      'Bernhard, Sandra',
-      'Berra, Yogi',
-      'Berry, Halle',
-      'Berry, Wendell',
-      'Bethea, Erin',
-      'Bevan, Aneurin',
-      'Bevel, Ken',
-      'Biden, Joseph',
-      'Bierce, Ambrose',
-      'Biko, Steve',
       'Billings, Josh',
-      'Biondo, Frank',
+      'Bierce, Ambrose',
+      'Beethoven, Ludwig',
+      'Bernhard, Sandra',
+      'Beckett, Samuel',
+      'Belloc, Hilaire',
+      'Blair, Robert',
+      'Bellow, Saul',
       'Birrell, Augustine',
       'Black, Elk',
-      'Blair, Robert',
+      'Bevan, Aneurin',
       'Blair, Tony',
-      'Blake, William'
+      'Blake, William',
+      'Beecher, Henry',
+      'Benjamin, Walter',
+      'Begin, Menachem',
+      'Benn, Tony',
+      'Bevel, Ken',
+      'Benson, Leana',
+      'Bennington, Chester',
+      'Bentsen, Lloyd',
+      'Berger, Ric',
+      'Bent, Silas',
+      'Berio, Luciano',
+      'Ben-Gurion, David',
+      'Berlin, Irving',
+      'Berne, Eric',
+      'Berra, Yogi',
+      'Biko, Steve',
+      'Berry, Wendell',
+      'Bergman, Ingmar',
+      'Berry, Halle',
+      'Bethea, Erin',
+      'Beddoes, Mick',
+      'Biden, Joseph'
     ];
 
     // 1. Filter the list of inventors for those who were born in the 1500's
@@ -103,6 +103,15 @@
          .map(li => li.innerText);
 
     // 7. Sort the people alphabetically by last name
+    result = people.sort((x, y) => {
+      const xLastAndFirst = x.split(', ');
+      // const [xLast, xFirst] = x.split(', ');
+      // also works but it requires line 110 instead of 109
+      const yLastAndFirst = y.split(', ');
+      return xLastAndFirst[0] > yLastAndFirst[0] ? 1 : -1;
+      // return xLast > yLast ? 1 : -1;
+    });
+    console.log(result);
 
     // 8. Sum up the instances of each of these
     const data = [
