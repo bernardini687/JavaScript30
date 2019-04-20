@@ -79,7 +79,8 @@
     console.log(result);
 
     // 3. Sort the inventors by birthdate, oldest to youngest
-    result = inventors.sort((a, b) => b.year - a.year);
+    const unsorted1 = inventors.slice(0); // Duplicates inventors because .sort() works in-place!
+    result = unsorted1.sort((x, y) => x.year - y.year);
     console.table(result);
 
     // 4. How many years did all the inventors live?
@@ -87,10 +88,11 @@
     console.log(result);
 
     // 5. Sort the inventors by years lived
-    result = inventors.sort((a, b) => {
-      const yearsA = a.passed - a.year;
-      const yearsB = b.passed - b.year;
-      return yearsB - yearsA;
+    const unsorted2 = inventors.slice(0);
+    result = unsorted2.sort((x, y) => {
+      const yearsX = x.passed - x.year;
+      const yearsY = y.passed - y.year;
+      return yearsX - yearsY;
     });
     console.table(result);
 
