@@ -66,7 +66,6 @@
       'Blake, William'
     ];
 
-    // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     function yearInTheCentury(year, centuryStart) {
       const centuryEnd = centuryStart + 100;
@@ -75,17 +74,14 @@
     const fifteen = inventors.filter(inventor => yearInTheCentury(inventor.year, 1500));
     console.table(fifteen);
 
-    // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
     const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
     console.log(fullNames);
 
-    // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
     const ordered = inventors.sort((a, b) => b.passed - a.passed); // Does not work as expected
     // console.table(ordered);
 
-    // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
     const sum = inventors.reduce((acc, cur) => acc + (cur.passed - cur.year), 0);
     console.log(sum);
@@ -101,11 +97,9 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    // 7. sort Exercise
-    // Sort the people alphabetically by last name
+    // 7. Sort the people alphabetically by last name
 
-    // 8. Reduce Exercise
-    // Sum up the instances of each of these
+    // 8. Sum up the instances of each of these
     const data = [
       'car',
       'car',
