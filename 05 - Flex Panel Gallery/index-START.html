@@ -123,11 +123,11 @@
     const panels = document.querySelectorAll('.panel');
 
     function toggleOpen() {
-      const alreadyOpen = Array.from(panels).map(p => p.classList.value.includes('open'));
-      if (alreadyOpen.includes(true)) {
-        panels.forEach(panel => panel.classList.remove('open'));
-      }
       this.classList.toggle('open');
+      panels.forEach(panel => {
+        // Works exclusively
+        if (panel !== this) panel.classList.remove('open');
+      });
     }
 
     function toggleActive(e) {
