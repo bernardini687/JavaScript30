@@ -67,8 +67,13 @@ input.search {
 
 span.population {
   font-size: 15px;
+  opacity: .5;
 }
 
-.hl {
-  background: #ffc600;
+.city-hl {
+  background-color: #ffc600;
+}
+
+.state-hl {
+  background-color: #bada55;
 }
