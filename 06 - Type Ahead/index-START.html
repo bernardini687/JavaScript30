@@ -24,10 +24,9 @@ fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data)); // Spreading into the push method
 
-function findMatches(query, cities) {
-  cities.filter(place => {
+function findMatches(query, data) {
+  data.filter(place => {
     const regexp = new RegExp(query, 'gi');
-
     return place.city.match(regexp) || place.state.match(regexp);
   });
 }
