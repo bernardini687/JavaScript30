@@ -24,9 +24,16 @@
     { text: 'Nice Nice Nice!', id: 542328 }
   ];
 
+  let result = [];
+
   // Some and Every Checks
   // Array.prototype.some() // is at least one person 19 or older?
+  result = people.some(e => new Date().getFullYear() - e.year >= 19);
+  console.log(result);
+
   // Array.prototype.every() // is everyone 19 or older?
+  result = people.every(e => new Date().getFullYear() - e.year >= 19);
+  console.log(result);
 
   // Array.prototype.find()
   // Find is like filter, but instead returns just the one you are looking for
