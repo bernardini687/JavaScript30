@@ -49,8 +49,8 @@
   // console.log(comments);
 
   const comments2 = [
-    comments.splice(0, index),
-    comments.splice(index + 1)
+    ...comments.slice(0, index), // Spread the elements inside
+    ...comments.slice(index + 1) // This is 'slice()', not 'splice()'!
   ];
   console.table(comments2);
 </script>
