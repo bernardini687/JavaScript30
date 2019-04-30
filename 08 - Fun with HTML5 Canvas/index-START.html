@@ -18,6 +18,7 @@
   context.lineWidth = 18; //
 
   let isDrawing = false;
+  let direction = false;
   let lastX = 0;
   let lastY = 0;
   let hue = 0;
@@ -31,11 +32,21 @@
     context.stroke();
 
     [lastX, lastY] = [e.offsetX, e.offsetY]; //
+
     hue++;
     if (hue >= 360) {
       hue = 0;
     }
-    console.log(hue);
+
+    if (context.lineWidth >= 64 || context.lineWidth <= 8) {
+      direction = !direction;
+    }
+
+    if (direction) {
+      context.lineWidth++;
+    } else {
+      context.lineWidth--;
+    }
   }
 
   canvas.addEventListener('mousedown', (e) => {
