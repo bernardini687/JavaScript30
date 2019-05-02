@@ -49,12 +49,29 @@
   // Viewing DOM Elements
   console.log(p);
   console.dir(p);
+  console.clear();
 
   // Grouping together
+  dogs.forEach(dog => {
+    console.groupCollapsed(dog.name);
+    console.log(dog);
+    console.log(dog.name, dog.age);
+    console.groupEnd(dog.name);
+  });
 
   // counting
+  console.count(check);
+  console.count(check);
+  console.count('MEOW');
 
   // timing
+  console.time('fetching data');
+  fetch('https://api.github.com/users/bernardini687')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetching data');
+      console.log(data.bio);
+    });
 
 </script>
 </body>
